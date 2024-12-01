@@ -82,4 +82,37 @@
     .section6 .sec1{
         padding-left: 35px;
      }
+
+     .section6 .sec3 .card_1{
+font-size: 1.3rem;
+     }
+     .section7 .sec3 .card_4{
+        font-size: 14px;
+        
+        
+        
+        max-width: 140px;
+     }
+
+     .section5 .content{
+        font-size: 18px;
+     }
+
+     .card5-mbl-response{
+        overflow: hidden;
+     }
+
+     .section7 .sec3 img{
+        width: 53px;
+        height: 53px;
+     }
+
+
+    
+
+     @media (min-width:768px) {
+        .dsk-view{
+            display: block !important;
+        }
+     }
 }

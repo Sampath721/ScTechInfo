@@ -14,9 +14,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <title>Task-4</title>
+    <link rel="shortcut icon" href="./images/new-logo.ico" type="image/x-icon">
+
+    <title>srichaitanya Infotech</title>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<style>
+ 
+/* General Styling */
+.swiper-container {
+  display: none; /* Hidden by default */
+  position: relative; /* Make sure the navigation buttons and pagination are positioned relative to this container */
+  width: 100%;
+  overflow: hidden;  /* Ensure no overflow outside the container */
+}
+
+/* Mobile specific styles */
+@media (max-width: 767px) {
+  .dsk-view{
+    display: none !important;
+  }
+  .swiper-container {
+    display: block; /* Show swiper on mobile */
+  }
+
+  .swiper-slide img {
+    width: 100%;  /* Ensure the image fills the container */
+    height: auto;  /* Maintain aspect ratio */
+  }
+
+  /* Pagination dots */
+ 
+
+  .swiper-pagination-bullet {
+    background-color: #fff; /* White dots */
+  }
+
+  /* Navigation buttons */
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 59%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #fff; /* Optional: Change the color of the navigation buttons */
+    font-size: 20px;  /* Adjust icon size */
+    width: 30px; /* Adjust the width of the buttons */
+    height: 30px; /* Adjust the height of the buttons */
+    border-radius: 50%; /* Make the buttons round */
+    background-color: rgba(0, 0, 0, 0.5);  /* Optional: Background color for buttons */
+  }
+
+  .swiper-button-prev {
+    left: 10px;  /* Position the left navigation button */
+  }
+
+  .swiper-button-next {
+    right: 10px; /* Position the right navigation button */
+  }
+}
+
+
+
+</style>
+
 
 </head>
 <body>
@@ -24,7 +87,7 @@
         <div class="top_head d-none d-xl-flex ">
             <div class="d-flex gap-4 align-items-center">
                 <div>
-                    <span>Email: </span>truvik@yourdomain.com
+                    <span>Email: </span>support@srichaitanyainfotech.com
                  </div>
                 <div>
                     <span>Call Now: </span>+000 723 123 21
@@ -39,7 +102,7 @@
         </div>
         <nav class="navbar bg-body-tertiary navbar-expand-xl ">
             <div class="container-fluid">
-              <img src="./images/LOGO.svg" alt="logo">
+              <img src="./images/new-logo.png" alt="logo">
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -56,6 +119,12 @@
                     <li class="nav-item">
                       <a class="nav-link active" href="#">Services</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="#">Contact</a>
+                  </li>
                     <!-- <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Dropdown
@@ -69,7 +138,7 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                       </ul>
                     </li> -->
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
@@ -78,11 +147,12 @@
                   </ul>
                 </div>
               </div>
-            </div>
-          </nav>
+            </div> -->
+          </nav> 
     </section>
     <section class="section1">
-        <div class="grid gap-0">
+        <div class="grid gap-0 dsk-view">
+
             <div class="g-col-12 g-col-lg-6 sec1_banner"></div>
             <div class="g-col-12 g-col-lg-6 sec2_banner">
                 <div class="text1">
@@ -101,6 +171,26 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://immigration.ca/wp-content/uploads/2021/09/Study-in-Canada_272614249.jpeg" alt="Study in Canada">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://guscanada.com/wp-content/uploads/2022/11/studying-abroad.png" alt="Studying Abroad">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://st2.depositphotos.com/3591429/12382/i/450/depositphotos_123828100-stock-photo-indian-friends-together.jpg" alt="Indian Friends Together">
+            </div>
+          </div>
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Navigation -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
     </section>
     <section class="section2 ">
         <div class="grid p-4">
@@ -109,14 +199,15 @@
           </div>
           <div class="g-col-12 g-col-lg-6 sec2">
             <div class="card_1">
-              WELCOME TO TRUVIK 
+              WELCOME TO SRICHAITANYA INFOTECH
               <hr>
+              Empowering Futures with Expert Guidance and Support!
             </div>
             <div class="card_2">
-              Welcome to immigration <span> Advisory </span>services
+              Your Trusted Partner for<span> Career Guidance </span>and Job Assistance
             </div>
             <div class="card_3">
-              Truvik immigration advisory foundation was established with a small idea that was incepted in the minds of its promoters in the year 1994! We skilfully guide applicants for immigration process to any country they aspire to settle down.
+              At Sri Chaitanya Infotech, we are dedicated to shaping the careers of aspiring professionals through rigorous job training programs. Our training modules are designed to equip individuals with the skills and knowledge needed to excel in their chosen fields.
             </div>
             <div class="card_4">
               <div class="d-flex flex-column gap-4">
@@ -130,7 +221,7 @@
                 </div>
                 <div class="d-flex">
                   <div class="tick_box"><img src="./images/tick_mark.svg" alt=""></div>
-                  <div>Easy approval by choosing top visa consultant</div>
+                  <div>Easy way to find jobs with low consultation fees</div>
                 </div>
               </div>
               <div class="video_box">
@@ -148,8 +239,8 @@
         <hr>
       </div>
       <div class="card_2 text-center pb-3">
-        We provide experts great <br> visa
-        <span>Categories</span>
+        We provide expert great <br> Job
+        <span>Opportunities</span>
       </div>
       <div class="grid container">
         <div class="g-col-12 g-col-md-6 g-col-lg-4 card_3">
@@ -163,13 +254,13 @@
         <div class="g-col-12 g-col-md-6 g-col-lg-4 card_4">
           <div>
             <div class="first_div">
-              Business Visa
+              Placement Success
             </div>
             <hr>
             <div class="second_div">
               Generally intended for individuals
-              entering a country for the purpose of
-              conducting business...
+              entering a professional jobs for the purpose of
+              Success in Carrier...
             </div>
             <div class="third_div">
               Explore More
@@ -192,17 +283,17 @@
           <div class="section1_banner">
             <div class="card_1">
               <div>
-                852
-                <span>Projects Are Completed</span>
+                4+
+                <span>Worldwide offices</span>
                 <hr>
               </div>
               <div>
-                900
-                <span>Projects Are Completed</span>
+                20+
+                <span>Technical Staff</span>
                 <hr>
               </div>
               <div>
-                630 
+                50+
                 <span>Clients Are Satisfied</span>
               </div>
             </div>
@@ -214,19 +305,20 @@
             <hr>
           </div>
           <div class="card_2">
-            Immigration services from <span>Experienced</span> agents
+            Consulting services from <span>Experienced</span> agents
           </div>
           <div class="card_3">
-            Study and work visa consultant
+            Training and Career Development Consultant
+
             <p>
-              Skilled professionals are always ready to provide reliable services to our clients!. We guide the applicants for their immigration.
+              Our skilled professionals provide reliable training in various technologies. We guide applicants to enhance their skills and achieve their career goals.
             </p>
             <hr>
           </div>
           <div class="card_3">
-            Online visa services and guidance
+            Online job services and guidance
             <p>
-              You can directly contact us through filling up the form. Our team will get back to you with your visa enquiry and help you for visa services.
+              You can directly contact us through filling up the form. Our team will get back to you with your jobenquiry and help you for job services.
             </p>
           </div>
         </div>
@@ -238,13 +330,14 @@
         <hr>
       </div>
       <div class="card_2 text-center pb-3">
-        Immigration & visa services <br> following
+       Our Consultation services in <br> following
         <span>Countries</span>
       </div>
       <div class="grid container">
         <div class="g-col-6 g-col-md-4 g-col-xl-3">
-          <img src="./images/section5_img1.png" alt="">
+          <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/516000/516652-nathan-phillips-square.jpg" alt="">
           <div class="shader"></div>
+          <div class="content">Canada</div>
         </div>
         <div class="g-col-6 g-col-md-4 g-col-xl-3">
           <img src="./images/section5_img2.png" alt="">
@@ -260,22 +353,7 @@
           <img src="./images/section5_img4.png" alt="">
           <div class="content">Italy</div>
         </div>
-        <div class="g-col-6 g-col-md-4 g-col-xl-3">
-          <img src="./images/section5_img5.png" alt="">
-          <div class="shader"></div>
-        </div>
-        <div class="g-col-6 g-col-md-4 g-col-xl-3">
-          <img src="./images/section5_img6.png" alt="">
-          <div class="shader"></div>
-        </div>
-        <div class="g-col-6 g-col-md-4 g-col-xl-3">
-          <img src="./images/section5_img7.png" alt="">
-          <div class="shader"></div>
-        </div>
-        <div class="g-col-6 g-col-md-4 g-col-xl-3">
-          <img src="./images/section5_img8.png" alt="">
-          <div class="shader"></div>
-        </div>
+        
       </div>
     </section>
     <section class="section6">
@@ -289,9 +367,7 @@
               Feedback from our <span> Clients</span>
             </div>
             <div class="card_3">
-              Travellers from countries categorized under high risk
-              list who are eligible to Germany, aged 12 and older,
-              are obliged to present certificates
+              I successfully landed my dream job! Their guidance, training, and support throughout the process were exceptional. Highly recommended!
               <div class="star_rating">
                 <img src="./images/rating_star.svg" alt="" >
                 <img src="./images/rating_star.svg" alt="" >
@@ -310,9 +386,7 @@
               </div>
             </div>
             <div class="card_3">
-              Travellers from countries categorized under high risk
-              list who are eligible to Germany, aged 12 and older,
-              are obliged to present certificates
+              Their expert team provided top-notch support and guidance, helping me secure the perfect job. I couldn’t be happier!
               <div class="star_rating">
                 <img src="./images/rating_star.svg" alt="" >
                 <img src="./images/rating_star.svg" alt="" >
@@ -339,10 +413,10 @@
           <div class="g-col-6 g-col-xl-3">
             <div class="card_1">
               <div class="first_div">
-                <img src="./images/section6_img4.svg" alt="">25
+                <img src="./images/section6_img4.svg" alt="">4
               </div>
               <div class="second_div">
-                Office Worldwide
+                Offices Worldwide
               </div>
               <div class="third_div">
                 This mistaken idea denouncing
@@ -353,7 +427,7 @@
           <div class="g-col-6 g-col-xl-3">
             <div class="card_1">
               <div class="first_div">
-                <img src="./images/section6_img5.svg" alt="">789
+                <img src="./images/section6_img5.svg" alt="">20+
               </div>
               <div class="second_div">
                 Team Members
@@ -367,10 +441,10 @@
           <div class="g-col-6 g-col-xl-3">
             <div class="card_1">
               <div class="first_div">
-                <img src="./images/section6_img6.svg" alt="">8k
+                <img src="./images/section6_img6.svg" alt="">30+
               </div>
               <div class="second_div">
-                Visa Processed
+                Secured their Jobs
               </div>
               <div class="third_div">
                 Nor again is there anyone loves or
@@ -381,7 +455,7 @@
           <div class="g-col-6 g-col-xl-3">
             <div class="card_1">
               <div class="first_div">
-                <img src="./images/section6_img7.svg" alt="">99+
+                <img src="./images/section6_img7.svg" alt="">50+
               </div>
               <div class="second_div">
                 Satisfied Clients
@@ -400,7 +474,7 @@
         <hr>
       </div>
       <div class="card_2 text-center pb-3">
-        Truvik get more articles from our <br>
+        SCIT get more articles from our <br>
         <span>Resources</span> news
       </div>
       <div class="grid gap-0 container">
@@ -415,7 +489,7 @@
             Employment Insurance For Foreign
             Nationals
           </div>
-          <div class="card_5 position-relative">
+          <div class="card_5 card5-mbl-response position-relative">
             Nunc mi ipsum faucibus vitae. Mauris vitae ultricies leo integer malesuada nunc vel risus commodo. Non blandit massa enim nec dui turpis nunc eget nunc.
             <div class=" grid sec3">
               <div class="g-col-12 g-col-md-6">
@@ -468,7 +542,7 @@
       </div>
     </section>
     <section class="section8">
-      <div class="grid gap-0 first_grid">
+      <div class="grid gap-0 first_grid d-none">
         <div class="g-col-6 g-col-sm-4 g-col-md-4 g-col-xl-2">
           <img src="./images/section8_img1.png" alt="">
         </div>
@@ -561,7 +635,7 @@
           <div>
             <div class="first_div">
               Canada <br>
-              <span>immigrations</span>
+              <span>Land Your Job</span>
             </div>
             <div class="second_div">
               Give Wings to Your Dream <br>
@@ -572,7 +646,32 @@
       </div>
     </section>
     <section class="footer">
-      Copyright © 2022 Truvik Template by Preyantechnosys All rights reserved.
+      Copyright © 2024 SCIT Template by campus-wave All rights reserved.
     </section>
 </body>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+   if (window.innerWidth <= 767) {
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    slidesPerView: 1,
+  });
+}
+
+  </script>
+
+
 </html>

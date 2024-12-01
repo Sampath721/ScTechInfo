@@ -1,8 +1,10 @@
 *{
     margin: 0;
     padding: 0;
+
 }
 body{
+    /* overflow-x: hidden; */
     font-family: "Poppins", sans-serif;
 }
 .top_head{
@@ -31,7 +33,8 @@ body{
 .navbar{
     font-weight: 600;
     font-size: 14px;
-    padding: 0;
+ 
+    padding: 13px;
 }
 .container-fluid img{
     margin: 20px 119px 20px 40px;
@@ -44,7 +47,7 @@ body{
 
 /* section1 */
 .section1 .sec1_banner{
-    background-image: url('./images/section1_sec1_banner.jpg');
+    background-image: url('https://media.istockphoto.com/id/932747510/photo/happy-cute-brunette-caucasian-grad-girl-is-smiling-her-class-mates-are-behind-she-is-in-a.jpg?s=612x612&w=0&k=20&c=IqepDV4jZGntHENWgLXShcuvVMEbCGueuh5Ep0AU8fM=');
     background-size: cover;
     width: 100%;
     height: 490px;
@@ -104,7 +107,7 @@ body{
 /* section2 */
 
 .section2 .sec1{
-    background-image: url('/images/section2_img1.jpg');
+    background-image: url('./images/section2_img1.jpg');
     background-size: cover;
     width: 90%;
     height: 530px;
@@ -126,7 +129,7 @@ body{
 .section2 hr{
     margin: 4px 0;
     opacity: 1;
-    width: 136px;
+    width: 248px;
 }
 
 .section2 .tick_box{
@@ -207,7 +210,7 @@ body{
     background-color: #003A66;
 }
 .section3 .card_3,.section3 .card_4, .section3 .card_5{
-    background-image: url('/images/section3_img1.jpg');
+    background-image: url('./images/section3_img1.jpg');
     background-size: cover;
     width: 100%;
     height: 250px;
@@ -215,7 +218,7 @@ body{
     margin-bottom: 124px;
 }
 .section3 .card_4{
-    background-image: url('/images/section3_img2.jpg');
+    background-image: url('./images/section3_img2.jpg');
 }
 .section3 .card_5{
     background-image: url('./images/section3_img3.jpg');
@@ -291,7 +294,7 @@ body{
     position: relative;
 }
 .section4 .sec1 .section1_banner{
-    background-image: url('/images/section4_img1.jpg');
+    background-image: url('./images/section4_img1.jpg');
     background-size: cover;
     width: 118%;
     height: 588px;
@@ -515,7 +518,7 @@ body{
     position: absolute;
     top: 126%;
     left: -27%;
-    width: 159%;
+    width: 150%;
     height: 368%;
 }
 .section7 .sec3>div{
@@ -527,7 +530,7 @@ body{
     margin-right: 20px;
 }
 .section7 .sec3 .card_4{
-    font-size: 20px;
+    font-size: 18px;
     color: #003A66;
 }
 .section8{
