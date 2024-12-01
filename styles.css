@@ -294,8 +294,9 @@ body{
     position: relative;
 }
 .section4 .sec1 .section1_banner{
-    background-image: url('./images/section4_img1.jpg');
+    background-image: url('https://www.mycism.com/wp-content/uploads/2022/08/canada-student-study.jpg');
     background-size: cover;
+    background-position: 40% 40%;
     width: 118%;
     height: 588px;
     display: flex;

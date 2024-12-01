@@ -1,118 +1,148 @@
 @media (max-width:1199px) {
-    .container-fluid img{
+    .container-fluid img {
         margin: 0;
     }
-    .navbar .navbar-nav{
+
+    .navbar .navbar-nav {
         padding-left: 10px;
         row-gap: 20px;
         padding-top: 20px;
         padding-bottom: 10px;
     }
-    .navbar .navbar-nav>div{
+
+    .navbar .navbar-nav>div {
         height: fit-content;
     }
-    
-    .section2 .traveller_img{
+
+    .section2 .traveller_img {
         right: -15%;
     }
-    .section3{
+
+    .section3 {
         margin-top: 10px;
     }
-    .section4{
+
+    .section4 {
         margin-bottom: 0px;
     }
-    .section4 .sec1 .section1_banner{
+
+    .section4 .sec1 .section1_banner {
         top: 0;
         width: 100%;
         position: static;
     }
-    .section7{
+
+    .section7 {
         margin-bottom: 0;
     }
-    .section7 .sec3{
+
+    .section7 .sec3 {
         position: static;
         width: fit-content;
         height: fit-content;
         margin-top: 40px;
     }
 }
+
 @media (max-width:991px) {
-    .section2 .traveller_img{
+    .section2 .traveller_img {
         right: -8%;
     }
 }
-@media (max-width:767px){
-    .section4 .sec2{
+
+@media (max-width:767px) {
+    .section4 .sec2 {
         padding: 25px;
         padding-top: 40px;
     }
-    .section4 .sec2 .card_2{
+
+    .section4 .sec2 .card_2 {
         font-size: 36px;
     }
 }
 
 @media (max-width:575px) {
-    .section1 .sec2_banner .text2{
+    .section2 .sec1 {
+        display: none;
+    }
+    .section1 .sec2_banner .text2 {
         font-size: 42px;
     }
-    .section1 .sec2_banner .card_1{
+
+    .section1 .sec2_banner .card_1 {
         flex-direction: column;
         row-gap: 15px;
     }
-    .section2 .traveller_img{
+
+    .section2 .traveller_img {
         right: -18%;
     }
-    .section2 .sec2{
-        margin-top: 30px;
+
+    .section2 .sec2 {
+        /* margin-top: 30px; */
     }
-    .section2 .card_2, .section3 .card_2, .section5 .card_2{
+
+    .section2 .card_2,
+    .section3 .card_2,
+    .section5 .card_2 {
         font-size: 25px;
     }
-    .section2 .card_4{
+
+    .section2 .card_4 {
         flex-direction: column;
         row-gap: 15px;
     }
-    .section4 .sec2 .card_2{
+    .section3 .card_5{
+        display: none;
+    }
+
+    .section4 .sec2 .card_2 {
         font-size: 29px;
         margin-bottom: 15px;
     }
-    .section4 .sec2 .card_3{
+
+    .section4 .sec2 .card_3 {
         font-size: 20px;
     }
-    .section6 .sec1{
+
+    .section6 .sec1 {
         padding-left: 35px;
-     }
+    }
 
-     .section6 .sec3 .card_1{
-font-size: 1.3rem;
-     }
-     .section7 .sec3 .card_4{
+    .section6 .sec3 .card_1 {
+        font-size: 1.3rem;
+    }
+
+    .section7 .sec3 .card_4 {
         font-size: 14px;
-        
-        
-        
+
+
+
         max-width: 140px;
-     }
+    }
 
-     .section5 .content{
+    .section5 .content {
         font-size: 18px;
-     }
+    }
 
-     .card5-mbl-response{
+    .card5-mbl-response {
         overflow: hidden;
-     }
+    }
 
-     .section7 .sec3 img{
+    .section7 .sec3 img {
         width: 53px;
         height: 53px;
-     }
+    }
 
 
-    
 
-     @media (min-width:768px) {
-        .dsk-view{
+
+    @media (min-width:768px) {
+
+       
+
+        .dsk-view {
             display: block !important;
         }
-     }
+    }
 }
