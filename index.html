@@ -1,15 +1,532 @@
-<!-- form.html -->
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Netlify Form</title>
-</head>
-<body>
-  <form name="contact" method="POST" netlify>
-    <input type="hidden" name="form-name" value="contact">
-    <input type="text" name="name" placeholder="Your name">
-    <input type="email" name="email" placeholder="Your email">
-    <button type="submit">Send</button>
-  </form>
-</body>
-</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #f5f5f5;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .coaching-section {
+        display: flex;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px;
+        border-radius: 20px;
+        height: 75vh;
+        min-height: 600px;
+    }
+
+    .video-column {
+        width: 100%;
+        max-width: 500px;
+        max-height: 500px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 280px;
+        aspect-ratio: 9 / 18;
+        border-radius: 30px;
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+        background: transparent;
+    }
+
+    .golfer-video {
+        width: 105%;
+        height: 100%;
+        border-radius: 30px;
+        object-fit: cover;
+        background: transparent;
+    }
+
+    .annotation {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .circle-icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .circle-icon:hover {
+        transform: scale(1.1);
+    }
+
+    .circle-p {
+        background: #FF5733;
+    }
+
+    .circle-r {
+        background: #333;
+    }
+
+    .text-bubble {
+        background: #ffffff;
+        padding: 12px 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        color: #0b0b0b;
+        max-width: 200px;
+        line-height: 1.4;
+        border: 1px solid #f0f0f0;
+    }
+
+    .arrow {
+        height: 2px;
+        background: repeating-linear-gradient(to right,
+                #ffffff 0px,
+                #ffffff 4px,
+                transparent 4px,
+                transparent 8px);
+        position: relative;
+    }
+
+    .arrow-left {
+
+        height: 2px;
+        background: repeating-linear-gradient(to right,
+                #ffffff 0px,
+                #ffffff 4px,
+                transparent 4px,
+                transparent 8px);
+        position: relative;
+
+
+    }
+
+    .arrow::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #ffffff;
+        border-radius: 50%;
+        right: -3px;
+        top: -2px;
+    }
+
+    .arrow-left::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #ffffff;
+        border-radius: 50%;
+        right: 86px;
+        top: -2px;
+
+
+    }
+
+    .annotation-1 {
+        top: 37%;
+        right: -270px;
+    }
+
+    .annotation-1 .arrow {
+        width: 100px;
+        margin-right: 15px;
+    }
+
+    .annotation-2 {
+        top: 52%;
+        right: -270px;
+    }
+
+    .annotation-2 .arrow {
+        width: 100px;
+        margin-right: 15px;
+    }
+
+    .annotation-3 {
+        bottom: 20%;
+        left: -260px;
+
+    }
+
+    .annotation-3 .arrow-left {
+
+        width: 90px;
+        margin-left: 22px;
+    }
+
+    .graph-section {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .graph-container {
+        width: 200px;
+        height: 120px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        margin: 0 auto 15px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .chart-bars {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: space-around;
+        padding: 15px;
+    }
+
+    .chart-bar {
+        width: 8px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 4px;
+        animation: growBar 2s ease-out;
+    }
+
+    @keyframes growBar {
+        from {
+            height: 0;
+        }
+
+        to {
+            height: var(--height);
+        }
+    }
+
+
+    .graph-section p {
+        font-size: 16px;
+        color: #333;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .annotation:hover .text-bubble {
+        /* transform: translateY(-5px); */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+
+
+    @media (max-width: 1024px) {
+        .coaching-section {
+            padding: 30px;
+            height: 70vh;
+            min-height: 500px;
+        }
+
+        .video-container {
+            max-width: 320px;
+            aspect-ratio: 9 / 18;
+        }
+
+        .annotation-1,
+        .annotation-2,
+        .annotation-3 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .coaching-section {
+            padding: 20px;
+            margin: 10px;
+            height: 65vh;
+            min-height: 450px;
+        }
+
+        .video-container {
+            max-width: 280px;
+            aspect-ratio: 9 / 18;
+        }
+
+        .graph-container {
+            width: 150px;
+            height: 100px;
+        }
+
+        .graph-section p {
+            font-size: 14px;
+        }
+    }
+
+    .custom-input {
+        background: #ffffff;
+        padding: 12px 16px;
+        border-radius: 15px;
+        font-size: 14px;
+        color: #0b0b0b;
+        border: none;
+        outline: none;
+        max-width: 250px;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+        transition: box-shadow 0.3s ease;
+        /* Ensure text stays inside the polygon */
+        overflow: hidden;
+        text-align: left;
+        line-height: 1.4;
+        /* Adjust padding to keep text within the polygon shape */
+        padding-right: 40px;
+        /* Extra padding on the right to account for the slanted edge */
+        box-sizing: border-box;
+    }
+
+    .custom-input:focus {
+        box-shadow: 0 0 25px rgba(173, 216, 255, 0.9), 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .custom-input-left {
+        background: #ffffff;
+        padding: 15px 16px;
+        border-radius: 15px;
+        font-size: 14px;
+        color: #0b0b0b;
+        border: none;
+        outline: none;
+        max-width: 250px;
+        font-family: 'Inter', sans-serif;
+        position: relative;
+        clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+        transition: box-shadow 0.3s ease;
+        /* Ensure text stays inside the polygon */
+        overflow: hidden;
+        text-align: right;
+        line-height: 1.4;
+        /* Adjust padding to keep text within the polygon shape */
+        padding-right: 40px;
+        /* Extra padding on the right to account for the slanted edge */
+        box-sizing: border-box;
+    }
+
+    .custom-input-left:focus {
+        box-shadow: 0 0 25px rgba(173, 216, 255, 0.9), 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 480px) {
+        .coaching-section {
+            height: 60vh;
+            min-height: 400px;
+            padding: 15px;
+        }
+
+        .video-container {
+            max-width: 240px;
+            aspect-ratio: 9 / 18;
+        }
+
+        .graph-container {
+            width: 120px;
+            height: 80px;
+        }
+    }
+
+    .fade-in {
+        animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .coaching-section {
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    .annotation {
+        animation: slideIn 1s ease-out;
+        animation-fill-mode: both;
+    }
+
+    .annotation-1 {
+        animation-delay: 0.3s;
+    }
+
+    .annotation-2 {
+        animation-delay: 0.5s;
+    }
+
+    .annotation-3 {
+        animation-delay: 0.7s;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .circle-icon {
+        animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        50% {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.1);
+        }
+
+        100% {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    }
+</style>
+<div class="coaching-section">
+    <div class="video-column">
+        <div class="video-container">
+            <div class="golfer-video">
+                <video src="./mandy_vids.mp4" class="golfer-video" autoplay muted loop
+                    aria-label="Golf swing demonstration video"></video>
+            </div>
+            <div class="annotation annotation-1">
+                <div class="arrow"></div>
+                <div class="custom-input">
+
+                    Maintain spine angle through impact
+
+                </div>
+            </div>
+            <div class="annotation annotation-2">
+                <div class="arrow"></div>
+                <div class="custom-input">More shoulder rotation on the backswing.</div>
+
+            </div>
+            <div class="annotation annotation-3">
+                <div class="custom-input-left">Stay centered to avoid losing balance during finish.</div>
+
+                <div class="arrow-left"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    document.querySelectorAll('.circle-icon').forEach((icon, index) => {
+        icon.addEventListener('click', function () {
+            const messages = [
+                "Perfect posture alignment! This stance optimizes swing mechanics.",
+                "Optimal club position for maximum power transfer and accuracy.",
+                "Excellent weight distribution creates balanced swing motion."
+            ];
+
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(notification => {
+                notification.style.animation = 'slideInRight 0.5s ease-out reverse';
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 500);
+            });
+
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 1000;
+                font-family: 'Inter', sans-serif;
+                font-size: 14px;
+                max-width: 300px;
+                animation: slideInRight 0.5s ease-out;
+                border-left: 4px solid ${this.classList.contains('circle-p') ? '#FF5733' : '#333'};
+            `;
+            notification.textContent = messages[index];
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'slideInRight 0.5s ease-out reverse';
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 500);
+            }, 4000);
+        });
+    });
+
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+
+    function handleResize() {
+        const width = window.innerWidth;
+        const annotations = document.querySelectorAll('.annotation');
+
+        if (width <= 1024) {
+            annotations.forEach(annotation => {
+                annotation.style.display = 'none';
+            });
+        } else {
+            annotations.forEach(annotation => {
+                annotation.style.display = 'flex';
+            });
+        }
+    }
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('load', handleResize);
+</script>
